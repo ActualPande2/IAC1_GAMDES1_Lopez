@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://wx7g85bnhu52"]
+
+[ext_resource type="Script" uid="uid://meei7q4obqfv" path="res://roulette_machine.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://dntc3xowju24k" path="res://procedural_wheel.gd" id="1_ig7tw"]
+
+[node name="RoulleteMachine" type="Node2D" unique_id=721996234]
+position = Vector2(576, 324)
+script = ExtResource("1_0xm2m")
+
+[node name="Wheel" type="Node2D" parent="." unique_id=1236455775]
+script = ExtResource("1_ig7tw")
+
+[node name="BallPivot" type="Node2D" parent="." unique_id=1024357459]
+
+[node name="Ball" type="ColorRect" parent="BallPivot" unique_id=932935047]
+offset_left = 221.0
+offset_top = 79.0
+offset_right = 235.0
+offset_bottom = 93.0
+
+[node name="SpinButton" type="Button" parent="." unique_id=1964917093]
+offset_left = 191.0
+offset_top = 143.0
+offset_right = 293.0
+offset_bottom = 174.0
+text = "SPIN WHEEL"

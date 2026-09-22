@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cfjrxnvth1m01"]
+
+[ext_resource type="Script" uid="uid://cgtwa4ju644op" path="res://procedural_wheel_3d.gd" id="1_2v2kw"]
+[ext_resource type="Script" uid="uid://ubd85w1h5jpa" path="res://roulette_machine_3d.gd" id="1_3k435"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_g4v7s"]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8lj4h"]
+
+[node name="RouletteMachine3D" type="Node3D" unique_id=1607204130]
+script = ExtResource("1_3k435")
+
+[node name="Wheel3D" type="Node3D" parent="." unique_id=1927197595]
+script = ExtResource("1_2v2kw")
+
+[node name="BallPivot3D" type="Node3D" parent="." unique_id=800312323]
+
+[node name="Ball3D" type="MeshInstance3D" parent="BallPivot3D" unique_id=617107026]
+mesh = SubResource("SphereMesh_g4v7s")
+surface_material_override/0 = SubResource("StandardMaterial3D_8lj4h")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1243831591]
+transform = Transform3D(1, 0, 0, 0, 0.57357645, 0.81915206, 0, -0.81915206, 0.57357645, 0, 2.351753, 2.4646287)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1459785028]
+
+[node name="SpinButton" type="Button" parent="." unique_id=319844056]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "SPIN BUTTON
+"
