@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://icn1sd76wp5g"]
+
+[ext_resource type="Script" uid="uid://dnsdm28oxg8ka" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://cc5usugff0j4i" path="res://player.gd" id="2_0xm2m"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0xm2m"]
+radius = 0.35
+height = 1.8
+
+[node name="Main" type="Node3D" unique_id=1733187195]
+script = ExtResource("1_ig7tw")
+
+[node name="Room" type="Node3D" parent="." unique_id=162135980]
+
+[node name="Floor" type="MeshInstance3D" parent="Room" unique_id=1825110696]
+
+[node name="Backwall" type="MeshInstance3D" parent="Room" unique_id=750139942]
+
+[node name="Leftwall" type="MeshInstance3D" parent="Room" unique_id=330213725]
+
+[node name="Rightwall" type="MeshInstance3D" parent="Room" unique_id=492311494]
+
+[node name="Ceiling" type="MeshInstance3D" parent="Room" unique_id=34274106]
+
+[node name="Lighting" type="WorldEnvironment" parent="." unique_id=649435105]
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1946235611]
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=476754635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+script = ExtResource("2_0xm2m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1105246197]
+shape = SubResource("CapsuleShape3D_0xm2m")
+
+[node name="Head" type="Node3D" parent="Player" unique_id=90962967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player/Head" unique_id=441521454]
+current = true
