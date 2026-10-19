@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://sewh0qpnqpn6"]
+
+[ext_resource type="Script" uid="uid://bageh1y4oy52w" path="res://mob.gd" id="1_1qmh0"]
+[ext_resource type="Texture2D" uid="uid://ocmqeoh454wb" path="res://dodge_the_creeps_2d_assets/art/enemyFlyingAlt_1.png" id="1_b3mxk"]
+[ext_resource type="Texture2D" uid="uid://hr6o1qovoedx" path="res://dodge_the_creeps_2d_assets/art/enemyFlyingAlt_2.png" id="2_1qmh0"]
+[ext_resource type="Texture2D" uid="uid://b13nq6ow4wxbr" path="res://dodge_the_creeps_2d_assets/art/enemySwimming_1.png" id="3_gfurk"]
+[ext_resource type="Texture2D" uid="uid://coilum5xce6v7" path="res://dodge_the_creeps_2d_assets/art/enemySwimming_2.png" id="4_ieysi"]
+[ext_resource type="Texture2D" uid="uid://dkiymicysunu6" path="res://dodge_the_creeps_2d_assets/art/enemyWalking_1.png" id="5_cixyi"]
+[ext_resource type="Texture2D" uid="uid://4kuf5v2nntuy" path="res://dodge_the_creeps_2d_assets/art/enemyWalking_2.png" id="6_7ulmv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jfba5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_b3mxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1qmh0")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gfurk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ieysi")
+}],
+"loop": 1,
+"name": &"swim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_cixyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7ulmv")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pcqmr"]
+
+[node name="Mob" type="RigidBody2D" unique_id=500670565]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_1qmh0")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2089405301]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_jfba5")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=373672437]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_pcqmr")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1592100977]
